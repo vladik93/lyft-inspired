@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,4 +12,50 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* REUSABLE */
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.btn {
+  border-radius: 1.6rem;
+  font-weight: 700;
+  border: none;
+}
+
+.btn--sm {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+}
+
+.btn--primary {
+  background-color: #0e8388;
+  color: #fff;
+}
+
+/* HEADER */
+.header {
+  height: 100px;
+  padding: 0 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.logo {
+  width: 35%;
+}
+
+.hamburger-icon {
+  background: none;
+  border: none;
 }
