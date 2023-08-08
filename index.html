@@ -13,11 +13,20 @@
       <img src="./assets/logo.svg" class="logo" />
       <nav class="header-nav">
         <button class="btn btn--sm btn--primary">Get a ride</button>
-        <button class="hamburger-icon">
+        <button class="hamburger-icon" onclick="openSideNav()">
           <img src="./assets/icons/hamburger.svg" class="icon" />
         </button>
       </nav>
       <!-- </div> -->
+      <nav class="header-side-nav">
+        <img src="./assets/logo.svg" class="logo" />
+        <div class="side-nav-actions">
+          <button class="btn btn--secondary">Login</button>
+          <button class="hamburger-icon" onclick="closeSideNav()">
+            <img src="./assets/icons/close.svg" class="icon" />
+          </button>
+        </div>
+      </nav>
     </header>
 
     <section class="section"></section>
