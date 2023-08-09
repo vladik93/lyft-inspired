@@ -9,3 +9,7 @@
 ## COLORS
 
 #0E8388
+
+# TEXT COLOR
+
+#333
