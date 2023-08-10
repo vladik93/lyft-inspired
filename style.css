@@ -25,6 +25,12 @@ body {
 }
 
 /* REUSABLE */
+.img {
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .link {
   color: #777;
   text-decoration: none;
@@ -62,6 +68,27 @@ body {
   border: 1px solid #000;
 }
 
+.heading--primary {
+  font-size: 3.6rem;
+  font-weight: 500;
+}
+
+.section {
+  padding: 3.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container {
+  padding: 0.8rem;
+}
+
 /* HEADER */
 .header {
   position: relative;
@@ -70,6 +97,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #ddd;
 }
 
 .header-nav {
@@ -132,4 +160,14 @@ body {
 .side-nav-list:last-child {
   padding: 6.4rem 0;
   border: none;
+}
+
+/* CTA SECTION */
+.section-cta {
+  gap: 3.2rem;
+}
+
+.btn-container {
+  display: flex;
+  gap: 1.6rem;
 }
