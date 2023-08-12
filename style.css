@@ -25,6 +25,10 @@ body {
 }
 
 /* REUSABLE */
+.text {
+  font-weight: 300;
+}
+
 .img {
   max-width: 100%;
   object-fit: cover;
@@ -93,6 +97,7 @@ body {
 .btn-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .img-container {
@@ -201,6 +206,33 @@ body {
   text-align: center;
 }
 
+.benefits-list {
+  padding: 1.8rem 0;
+}
+
 .benefits-list li {
   display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding-bottom: 1.6rem;
+}
+
+.benefits-list-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.benefits-list-heading {
+  font-weight: 700;
+}
+
+.section-benefits .btn-container {
+  gap: 3.2rem;
+  padding: 0.8rem 0;
+}
+
+.benefits-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
