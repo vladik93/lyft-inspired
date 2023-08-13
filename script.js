@@ -9,3 +9,5 @@ function closeSideNav() {
 
   sideNav.classList.remove("open");
 }
+
+// Testimonials

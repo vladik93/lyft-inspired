@@ -139,6 +139,7 @@ body {
   background-color: #fff;
   transform: translateX(100%);
   transition: 300ms all ease-in;
+  z-index: 100;
 }
 
 .header-side-nav.open {
@@ -245,6 +246,7 @@ body {
 
 .testimonials-container {
   display: flex;
+  transform: translateX(0%);
 }
 
 .testimonial-item {
@@ -264,11 +266,10 @@ body {
 }
 
 .testimonials-controls {
-  position: absolute;
-  bottom: 0;
-}
-
-.testimonials-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
 }
 
 .indicators {
