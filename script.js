@@ -16,9 +16,12 @@ function closeSideNav() {
 let slideIndex = 0;
 
 let btn = document.getElementById("testimonial-right-btn");
+let btn2 = document.getElementById("testimonial-left-btn");
 let testimonialItems = document.querySelectorAll(".testimonial-item");
 let testimonialsContainer = document.getElementById("testimonials-container");
 let indicatorsContainer = document.querySelector(".indicators");
+
+// Testimonial Right Button
 
 btn.addEventListener("click", function () {
   slideIndex++;
@@ -35,11 +38,18 @@ btn.addEventListener("click", function () {
   }
 });
 
-testimonialItems.forEach((item, index) => {
-  let span = document.createElement("span");
-  indicatorsContainer.appendChild(span);
+// Testimonial Left Button
 
-  if (index === slideIndex) {
-    span.style.backgroundColor = "red";
+btn2.addEventListener("click", function () {
+  slideIndex--;
+
+  if (slideIndex < 0) {
+    slideIndex = testimonialItems.length - 1;
+
+    testimonialsContainer.style = `transform: translateX(${
+      slideIndex * -100
+    }%)`;
   }
+
+  testimonialsContainer.style = `transform: translateX(${slideIndex * -100}%)`;
 });
