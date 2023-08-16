@@ -264,6 +264,16 @@ body {
   width: 10rem;
   height: 10rem;
   border-radius: 100%;
+  transition: all 0.3s ease-in 0.3s;
+  /* transform: scale(0.5); */
+}
+
+.testimonial-item .img--profile {
+  transform: scale(0.5);
+}
+
+.testimonial-item.selected .img--profile {
+  transform: scale(1);
 }
 
 /* .testimonials-controls {
@@ -276,7 +286,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1.8rem;
-  padding: 1.6rem 0;
+  padding: 3.2rem 0;
 }
 
 .testimonial-btn {
@@ -299,4 +309,8 @@ body {
   background-color: none;
   border-radius: 50%;
   border: 1px solid #000;
+}
+
+.indicators span.selected {
+  background-color: red;
 }
