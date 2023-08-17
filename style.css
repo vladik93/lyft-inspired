@@ -207,7 +207,7 @@ body {
 }
 
 .benefits-list {
-  padding: 1.8rem 0;
+  padding: 1.6rem 0;
 }
 
 .benefits-list li {
@@ -285,12 +285,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1.6rem;
   padding: 3.2rem 0;
 }
 
 .testimonial-btn {
   border-radius: 50%;
+  display: flex;
+  padding: 3px;
+  align-items: center;
 }
 
 .testimonial-btn .icon {
@@ -308,9 +311,54 @@ body {
   height: 1rem;
   background-color: none;
   border-radius: 50%;
-  border: 1px solid #000;
+  border: 1px solid #333;
 }
 
 .indicators span.selected {
-  background-color: red;
+  background-color: #333;
+}
+
+/* RIDE SECTION */
+
+.section-ride {
+  padding: 8rem 1.6rem;
+  gap: 6.4rem;
+}
+
+.img-ride {
+  width: 70%;
+}
+
+.ride-list-container {
+  padding-top: 3.2rem;
+  text-align: center;
+}
+
+.ride-list-container > .heading--secondary {
+  padding-bottom: 1.6rem;
+}
+
+.ride-list {
+  padding: 1.6rem 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.ride-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding-bottom: 1.6rem;
+}
+
+.section-ride .btn-container {
+  gap: 3.2rem;
+  padding: 0.8rem 0;
+}
+
+/* RIDE BENEFITS SUB-SECTION */
+
+.ride-benefits-container > .heading--secondary {
+  padding-bottom: 1.6rem;
 }
