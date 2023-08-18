@@ -40,6 +40,10 @@ body {
   text-decoration: none;
 }
 
+.link--underline {
+  text-decoration: underline;
+}
+
 .list {
   list-style: none;
 }
@@ -361,4 +365,34 @@ body {
 
 .ride-benefits-container > .heading--secondary {
   padding-bottom: 1.6rem;
+}
+
+.conditions-text {
+  padding-top: 1.6rem;
+  font-size: 1.4rem;
+}
+
+/* RIDE CAROUSEL SUB-SECTION */
+
+.ride-carousel {
+  text-align: center;
+}
+
+.carousel-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 6.4rem;
+}
+
+.btn-carousel {
+  border-radius: 50%;
+  padding: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.btn-carousel:nth-child(2) {
+  background-color: #0e8388;
 }
