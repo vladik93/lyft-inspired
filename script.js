@@ -69,4 +69,15 @@ btn2.addEventListener("click", function () {
   indicators[slideIndex].classList.add("selected");
 });
 
-// Testimonial Indicators
+// Ride Carousel Right
+
+let rideCarouselContainer = document.getElementById("ride-carousel-container");
+let rideCarouselRight = document.getElementById("ride-carousel-right");
+
+let moveTo = 0;
+
+rideCarouselRight.addEventListener("click", function () {
+  moveTo += 75;
+
+  rideCarouselContainer.style = `transform: translateX(-${moveTo}%)`;
+});
