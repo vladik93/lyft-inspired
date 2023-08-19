@@ -29,6 +29,10 @@ body {
   font-weight: 300;
 }
 
+.text--sm {
+  font-size: 1.4rem;
+}
+
 .img {
   max-width: 100%;
   object-fit: cover;
@@ -51,6 +55,11 @@ body {
 .icon {
   width: 3rem;
   height: 3rem;
+}
+
+.icon--sm {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .btn {
@@ -376,6 +385,10 @@ body {
 
 .ride-carousel {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
 }
 
 .carousel-btn-container {
@@ -395,4 +408,28 @@ body {
 
 .btn-carousel:nth-child(2) {
   background-color: #0e8388;
+}
+
+.ride-carousel-container {
+  padding-top: 6.4rem;
+  display: flex;
+  gap: 0.8rem;
+  transform: translateX(0%);
+}
+
+.ride-carousel-item {
+  padding: 3.2rem 1.6rem;
+  border-radius: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0.1px solid rgba(221, 221, 221, 0.5);
+  flex: 1 0 75%;
+  gap: 3.2rem;
+  box-shadow: 0rem 0.8rem 8px -5px #ddd;
+}
+
+.img--ride-carousel {
+  height: 6.4rem;
+  align-self: center;
 }

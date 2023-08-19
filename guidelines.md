@@ -14,6 +14,14 @@
 
 #0E8388
 
+# GRAYS (COLORS)
+
+#ddd
+
 # TEXT COLOR
 
 #333
+
+## BORDER-RADIUS (px)
+
+16
