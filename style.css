@@ -75,6 +75,10 @@ body {
   font-size: 1.4rem;
 }
 
+.btn:disabled {
+  opacity: 0.5;
+}
+
 .btn--primary {
   background-color: #0e8388;
   color: #fff;
@@ -404,6 +408,10 @@ body {
   align-items: center;
   justify-content: center;
   border: none;
+}
+
+.btn-carousel:disabled {
+  opacity: 0.5;
 }
 
 .btn-carousel:nth-child(2) {

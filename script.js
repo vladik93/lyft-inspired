@@ -80,8 +80,20 @@ let currentIndex = 0;
 let moveBy = 0;
 let gap = 0;
 
+console.log(rideCarouselItems.length);
+
 carouselRight.addEventListener("click", function () {
-  moveBy += 75;
-  gap += 0.8;
-  rideCarouselContainer.style = `transform: translateX(-${moveBy}%) translateX(-${gap}rem)`;
+  currentIndex++;
+
+  if (currentIndex < rideCarouselItems.length - 1) {
+    moveBy += 75;
+    gap += 0.8;
+    rideCarouselContainer.style = `transform: translateX(-${moveBy}%) translateX(-${gap}rem)`;
+    console.log(currentIndex);
+  } else {
+    moveBy += 50;
+    gap += 0.8;
+    rideCarouselContainer.style = `transform: translateX(-${moveBy}%) translateX(-${gap}rem)`;
+    carouselRight.disabled = true;
+  }
 });
