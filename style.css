@@ -415,21 +415,23 @@ body {
   display: flex;
   gap: 0.8rem;
   transform: translateX(0%);
+  transition: 0.3s all ease-in;
 }
 
 .ride-carousel-item {
-  padding: 3.2rem 1.6rem;
+  /* padding: 3.2rem 4.6rem; */
   border-radius: 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border: 0.1px solid rgba(221, 221, 221, 0.5);
   flex: 1 0 75%;
+  height: auto;
   gap: 3.2rem;
   box-shadow: 0rem 0.8rem 8px -5px #ddd;
 }
 
 .img--ride-carousel {
-  height: 6.4rem;
+  max-height: 6.4rem;
   align-self: center;
 }

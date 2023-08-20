@@ -69,15 +69,23 @@ btn2.addEventListener("click", function () {
   indicators[slideIndex].classList.add("selected");
 });
 
-// Ride Carousel Right
+// Ride Carousel Button
 
 let rideCarouselContainer = document.getElementById("ride-carousel-container");
-let rideCarouselRight = document.getElementById("ride-carousel-right");
+let rideCarouselItems = document.querySelectorAll(".ride-carousel-item");
+let carouselRight = document.getElementById("ride-carousel-right");
 
-let moveTo = 0;
+let currentIndex = 0;
 
-rideCarouselRight.addEventListener("click", function () {
-  moveTo += 75;
+let moveBy = 0;
+let gap = 0;
 
-  rideCarouselContainer.style = `transform: translateX(-${moveTo}%)`;
+carouselRight.addEventListener("click", function () {
+  if (currentIndex < rideCarouselItems.length - 1) {
+    moveBy += 75;
+    gap += 0.8;
+    rideCarouselContainer.style = `transform: translateX(-${moveBy}%) translateX(-${gap}rem)`;
+    console.log(moveBy);
+  }
+  console.log("Reached end");
 });
