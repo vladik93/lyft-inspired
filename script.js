@@ -81,11 +81,7 @@ let moveBy = 0;
 let gap = 0;
 
 carouselRight.addEventListener("click", function () {
-  if (currentIndex < rideCarouselItems.length - 1) {
-    moveBy += 75;
-    gap += 0.8;
-    rideCarouselContainer.style = `transform: translateX(-${moveBy}%) translateX(-${gap}rem)`;
-    console.log(moveBy);
-  }
-  console.log("Reached end");
+  moveBy += 75;
+  gap += 0.8;
+  rideCarouselContainer.style = `transform: translateX(-${moveBy}%) translateX(-${gap}rem)`;
 });
