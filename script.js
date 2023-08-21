@@ -69,11 +69,12 @@ btn2.addEventListener("click", function () {
   indicators[slideIndex].classList.add("selected");
 });
 
-// Ride Carousel Button
+// Ride Carousel Buttons
 
 let rideCarouselContainer = document.getElementById("ride-carousel-container");
 let rideCarouselItems = document.querySelectorAll(".ride-carousel-item");
 let carouselRight = document.getElementById("ride-carousel-right");
+let carouselLeft = document.getElementById("ride-carousel-left");
 
 let currentIndex = 0;
 
@@ -84,6 +85,8 @@ let padding = 0;
 console.log(rideCarouselItems.length);
 
 carouselRight.addEventListener("click", function () {
+  carouselLeft.disabled = false;
+
   currentIndex++;
 
   if (currentIndex < rideCarouselItems.length - 1) {
@@ -105,5 +108,14 @@ carouselRight.addEventListener("click", function () {
     translateX(-${gap}rem)
     translateX(-${padding}rem)`;
     carouselRight.disabled = true;
+  }
+});
+
+carouselLeft.addEventListener("click", function () {
+  currentIndex--;
+  if (currentIndex > 0) {
+    console.log(currentIndex);
+  } else {
+    carouselLeft.disabled = true;
   }
 });
