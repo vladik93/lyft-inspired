@@ -79,6 +79,7 @@ let currentIndex = 0;
 
 let moveBy = 0;
 let gap = 0;
+let padding = 0;
 
 console.log(rideCarouselItems.length);
 
@@ -88,12 +89,21 @@ carouselRight.addEventListener("click", function () {
   if (currentIndex < rideCarouselItems.length - 1) {
     moveBy += 75;
     gap += 0.8;
-    rideCarouselContainer.style = `transform: translateX(-${moveBy}%) translateX(-${gap}rem)`;
+    padding = 3.2;
+
+    rideCarouselContainer.style = `transform: 
+    translateX(-${moveBy}%) 
+    translateX(-${gap}rem)
+    translateX(${padding}rem)`;
     console.log(currentIndex);
   } else {
     moveBy += 50;
     gap += 0.8;
-    rideCarouselContainer.style = `transform: translateX(-${moveBy}%) translateX(-${gap}rem)`;
+    padding = 0;
+    rideCarouselContainer.style = `transform: 
+    translateX(-${moveBy}%) 
+    translateX(-${gap}rem)
+    translateX(-${padding}rem)`;
     carouselRight.disabled = true;
   }
 });

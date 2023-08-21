@@ -410,6 +410,10 @@ body {
   border: none;
 }
 
+.btn-carousel:nth-child(1) {
+  background: none;
+}
+
 .btn-carousel:disabled {
   opacity: 0.5;
 }
@@ -427,7 +431,7 @@ body {
 }
 
 .ride-carousel-item {
-  /* padding: 3.2rem 4.6rem; */
+  padding: 3.2rem 1.6rem;
   border-radius: 1.6rem;
   display: flex;
   flex-direction: column;
