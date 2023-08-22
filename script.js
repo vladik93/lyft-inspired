@@ -93,12 +93,12 @@ carouselRight.addEventListener("click", function () {
     moveBy += 75;
     gap += 0.8;
     padding = 3.2;
+    console.log("RIGHT: " + moveBy);
 
     rideCarouselContainer.style = `transform: 
     translateX(-${moveBy}%) 
     translateX(-${gap}rem)
     translateX(${padding}rem)`;
-    console.log(currentIndex);
   } else {
     moveBy += 50;
     gap += 0.8;
@@ -113,7 +113,16 @@ carouselRight.addEventListener("click", function () {
 
 carouselLeft.addEventListener("click", function () {
   currentIndex--;
+
   if (currentIndex > 0) {
+    moveBy -= 75;
+    gap -= 0.8;
+    padding = 3.2;
+
+    rideCarouselContainer.style = `transform:
+    translateX(-${moveBy}%)
+    translateX(-${gap}rem)
+    translateX(${padding}rem)`;
     console.log(currentIndex);
   } else {
     carouselLeft.disabled = true;
