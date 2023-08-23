@@ -1,0 +1,68 @@
+let rideCarouselContainer = document.getElementById("ride-carousel-container");
+let rideCarouselItems = document.querySelectorAll(".ride-carousel-item");
+let carouselRight = document.getElementById("ride-carousel-right");
+let carouselLeft = document.getElementById("ride-carousel-left");
+
+let currentIndex = 0;
+
+let moveBy = 0;
+let gap = 0;
+let padding = 0;
+
+carouselRight.addEventListener("click", function () {
+  carouselLeft.disabled = false;
+
+  currentIndex++;
+
+  if (currentIndex < rideCarouselItems.length - 1) {
+    moveBy += 75;
+    gap += 0.8;
+    padding = 3.2;
+
+    rideCarouselContainer.style = `transform: 
+    translateX(-${moveBy}%) 
+    translateX(-${gap}rem)
+    translateX(${padding}rem)`;
+  } else {
+    moveBy += 50;
+    gap += 0.8;
+    padding = 0;
+    rideCarouselContainer.style = `transform: 
+    translateX(-${moveBy}%) 
+    translateX(-${gap}rem)
+    translateX(-${padding}rem)`;
+    carouselRight.disabled = true;
+  }
+
+  console.log("RIGHT: " + moveBy);
+  console.log(currentIndex);
+});
+
+carouselLeft.addEventListener("click", function () {
+  currentIndex--;
+  console.log(currentIndex);
+
+  if (currentIndex > 0) {
+    moveBy -= 75;
+    gap -= 0.8;
+    padding = 3.2;
+
+    rideCarouselContainer.style = `transform:
+    translateX(-${moveBy}%)
+    translateX(-${gap}rem)
+    translateX(${padding}rem)`;
+    console.log(currentIndex);
+  } else {
+    carouselLeft.disabled = true;
+    moveBy -= 50;
+    gap -= 1.6;
+    padding = 6.4;
+
+    rideCarouselContainer.style = `transform:
+    translateX(-${moveBy}%)
+    translateX(-${gap}rem)
+    translateX(${padding}rem)`;
+  }
+
+  console.log("LEFT: " + moveBy);
+});
