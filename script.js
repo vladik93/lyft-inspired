@@ -83,9 +83,8 @@ let gap = 0;
 let padding = 0;
 
 carouselRight.addEventListener("click", function () {
-  carouselLeft.disabled = false;
-
   currentIndex++;
+  carouselLeft.disabled = false;
 
   if (currentIndex < rideCarouselItems.length - 1) {
     moveBy += 75;
@@ -104,38 +103,42 @@ carouselRight.addEventListener("click", function () {
     translateX(-${moveBy}%) 
     translateX(-${gap}rem)
     translateX(-${padding}rem)`;
+    carouselRight.classList.add("btn-complete");
     carouselRight.disabled = true;
   }
-
-  console.log("RIGHT: " + moveBy);
-  console.log(currentIndex);
+  console.log("RIGHT: " + moveBy + ", INDEX: " + currentIndex);
+  console.log(
+    "SIDE: RIGHT; " + "GAP: " + gap + "; " + "PADDING: " + padding + ";"
+  );
 });
 
 carouselLeft.addEventListener("click", function () {
   currentIndex--;
-  console.log(currentIndex);
+  carouselRight.classList.remove("btn-complete");
+  carouselRight.disabled = false;
 
-  if (currentIndex > 0) {
+  if (currentIndex == 0) {
+    carouselLeft.disabled = true;
+    moveBy -= 75;
+    gap -= 0.8;
+    padding = 0;
+  } else if (currentIndex == rideCarouselItems.length - 2) {
+    moveBy -= 50;
+    gap -= 0.8;
+    padding = 3.2;
+  } else {
     moveBy -= 75;
     gap -= 0.8;
     padding = 3.2;
-
-    rideCarouselContainer.style = `transform:
-    translateX(-${moveBy}%)
-    translateX(-${gap}rem)
-    translateX(${padding}rem)`;
-    console.log(currentIndex);
-  } else {
-    carouselLeft.disabled = true;
-    moveBy -= 50;
-    gap -= 1.6;
-    padding = 6.4;
-
-    rideCarouselContainer.style = `transform:
-    translateX(-${moveBy}%)
-    translateX(-${gap}rem)
-    translateX(${padding}rem)`;
   }
 
-  console.log("LEFT: " + moveBy);
+  rideCarouselContainer.style = `transform:
+  translateX(-${moveBy}%)
+  translateX(-${gap}rem)
+  translateX(${padding}rem)`;
+
+  console.log("LEFT: " + moveBy + ", INDEX: " + currentIndex);
+  console.log(
+    "SIDE: LEFT; " + "GAP: " + gap + "; " + "PADDING: " + padding + ";"
+  );
 });

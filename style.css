@@ -422,6 +422,24 @@ body {
   background-color: #0e8388;
 }
 
+.btn-carousel .icon-complete {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn-complete .icon {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn-complete .icon-complete {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
 .ride-carousel-container {
   padding-top: 6.4rem;
   display: flex;
