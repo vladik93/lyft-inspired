@@ -142,3 +142,12 @@ carouselLeft.addEventListener("click", function () {
     "SIDE: LEFT; " + "GAP: " + gap + "; " + "PADDING: " + padding + ";"
   );
 });
+
+// KEYWORDS TRANSITIONS
+
+let businessHeadings = document.querySelectorAll(".business-heading-keyword");
+let businessIndex = 0;
+
+setInterval(() => {
+  businessHeadings[businessIndex].classList.add("slide");
+}, [3000]);

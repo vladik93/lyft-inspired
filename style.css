@@ -552,7 +552,7 @@ body {
 /*  SECTION ACCESSIBILITY */
 
 .section-accessibility {
-  padding: 8rem 1.6rem;
+  padding: 8rem 1.6rem 6.4rem 1.6rem;
   background: none;
 }
 
@@ -568,4 +568,32 @@ body {
 
 .accessibility-container .btn-container {
   align-items: start;
+}
+
+/* SECTION BUSINESS */
+.section-business {
+  padding: 8rem 1.6rem;
+  background-color: #eff5f6;
+  align-items: center;
+  gap: 1.6rem;
+  text-align: center;
+}
+
+.business-heading-container {
+  text-align: center;
+  overflow: hidden;
+}
+
+.business-heading-keyword {
+  display: none;
+  transition: all 0.3s ease-in;
+  transform: translateY(0%);
+}
+
+.business-heading-keyword.show {
+  display: block;
+}
+
+.business-heading-keyword.slide {
+  transform: translateY(100%);
 }
