@@ -537,6 +537,10 @@ body {
   gap: 0.8rem;
 }
 
+.section-safety .heading--secondary {
+  margin-bottom: 0.8rem;
+}
+
 .section-safety > .benefits-container > * {
   text-align: start;
 }
