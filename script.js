@@ -4,12 +4,14 @@ function openSideNav() {
   let sideNav = document.querySelector(".header-side-nav");
 
   sideNav.classList.add("open");
+  document.body.style = "overflow: hidden";
 }
 
 function closeSideNav() {
   let sideNav = document.querySelector(".header-side-nav");
 
   sideNav.classList.remove("open");
+  document.body.style = "overflow: scroll";
 }
 
 // Testimonial Slides
