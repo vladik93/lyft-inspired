@@ -521,6 +521,47 @@ body {
 }
 
 .estimate-form .btn {
-  box-shadow: 0px 3px 0.7rem 0px #777;
+  box-shadow: 0px 2px 0.7rem 0px #777;
   background-color: #fff;
+}
+
+/* SAFETY SECTION */
+
+.section-safety {
+  gap: 3.2rem;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.section-safety > .benefits-container {
+  gap: 0.8rem;
+}
+
+.section-safety > .benefits-container > * {
+  text-align: start;
+}
+
+.section-safety .btn-container {
+  align-items: start;
+}
+
+/*  SECTION ACCESSIBILITY */
+
+.section-accessibility {
+  padding: 8rem 1.6rem;
+  background: none;
+}
+
+.heading-accessibility {
+  font-size: 2.4rem;
+}
+
+.accessibility-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.accessibility-container .btn-container {
+  align-items: start;
 }
