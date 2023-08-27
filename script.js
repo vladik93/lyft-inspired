@@ -158,9 +158,16 @@ document.addEventListener("visibilitychange", () => {
 
 // WORKABLE HACK FOR 0 INDEX
 
-setTimeout(() => {
-  businessHeadings[0].classList.add("slide");
-}, [2650]);
+setTimeout(
+  () => {
+    if (isActive) {
+      businessHeadings[0].classList.add("slide");
+    } else {
+      businessHeadings[0].classList.add("slide");
+    }
+  },
+  isActive ? 2650 : 10000
+);
 
 setInterval(() => {
   businessHeadings[0].classList.remove("slide");
@@ -173,7 +180,7 @@ setInterval(() => {
           businessHeadings[businessIndex].classList.add("slide");
         }
       },
-      isActive ? 2650 : 5000
+      isActive ? 2650 : 10000
     );
     businessHeadings[businessIndex].classList.remove("slide");
     businessHeadings[businessIndex].classList.remove("show");
@@ -188,7 +195,7 @@ setInterval(() => {
           businessHeadings[businessIndex].classList.add("slide");
         }
       },
-      isActive ? 2650 : 5000
+      isActive ? 2650 : 10000
     );
     businessHeadings[businessIndex].classList.remove("slide");
     businessHeadings[businessIndex].classList.remove("show");
