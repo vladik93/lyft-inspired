@@ -586,13 +586,16 @@ body {
 }
 
 .business-heading-keyword {
-  display: none;
-  transition: all 0.3s ease-in;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease-in, opacity 0.4s ease-in;
   transform: translateY(0%);
 }
 
 .business-heading-keyword.show {
-  display: block;
+  opacity: 1;
+  height: auto;
 }
 
 .business-heading-keyword.slide {
