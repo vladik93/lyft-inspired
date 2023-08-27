@@ -150,6 +150,12 @@ carouselLeft.addEventListener("click", function () {
 let businessHeadings = document.querySelectorAll(".business-heading-keyword");
 let businessIndex = 0;
 
+let isActive = true;
+
+document.addEventListener("visibilitychange", () => {
+  isActive = document.visibilityState = "visible";
+});
+
 // WORKABLE HACK FOR 0 INDEX
 
 setTimeout(() => {
@@ -159,17 +165,31 @@ setTimeout(() => {
 setInterval(() => {
   businessHeadings[0].classList.remove("slide");
   if (businessIndex < businessHeadings.length - 1) {
-    setTimeout(() => {
-      businessHeadings[businessIndex].classList.add("slide");
-    }, [2650]);
+    setTimeout(
+      () => {
+        if (isActive) {
+          businessHeadings[businessIndex].classList.add("slide");
+        } else {
+          businessHeadings[businessIndex].classList.add("slide");
+        }
+      },
+      isActive ? 2650 : 5000
+    );
     businessHeadings[businessIndex].classList.remove("slide");
     businessHeadings[businessIndex].classList.remove("show");
     businessIndex++;
     businessHeadings[businessIndex].classList.add("show");
   } else {
-    setTimeout(() => {
-      businessHeadings[businessIndex].classList.add("slide");
-    }, [2650]);
+    setTimeout(
+      () => {
+        if (isActive) {
+          businessHeadings[businessIndex].classList.add("slide");
+        } else {
+          businessHeadings[businessIndex].classList.add("slide");
+        }
+      },
+      isActive ? 2650 : 5000
+    );
     businessHeadings[businessIndex].classList.remove("slide");
     businessHeadings[businessIndex].classList.remove("show");
     businessIndex = 0;
