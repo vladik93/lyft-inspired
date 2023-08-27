@@ -602,5 +602,18 @@ body {
   transform: translateY(100%);
 }
 
-.section-business-carousel {
+.brands-carousel-items {
+  display: flex;
+  transform: translateX(0%);
+}
+
+.brands-carousel-item {
+  display: flex;
+  flex: 1 0 100%;
+  justify-content: center;
+}
+
+.img-brand {
+  width: 100%;
+  height: 4.8rem;
 }
