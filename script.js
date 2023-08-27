@@ -166,7 +166,7 @@ setTimeout(
       businessHeadings[0].classList.add("slide");
     }
   },
-  isActive ? 2650 : 10000
+  isActive ? 2650 : 3000
 );
 
 setInterval(() => {
@@ -180,7 +180,7 @@ setInterval(() => {
           businessHeadings[businessIndex].classList.add("slide");
         }
       },
-      isActive ? 2650 : 10000
+      isActive ? 2650 : 3000
     );
     businessHeadings[businessIndex].classList.remove("slide");
     businessHeadings[businessIndex].classList.remove("show");
@@ -195,7 +195,7 @@ setInterval(() => {
           businessHeadings[businessIndex].classList.add("slide");
         }
       },
-      isActive ? 2650 : 10000
+      isActive ? 2650 : 3000
     );
     businessHeadings[businessIndex].classList.remove("slide");
     businessHeadings[businessIndex].classList.remove("show");
