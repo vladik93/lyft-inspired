@@ -150,6 +150,29 @@ carouselLeft.addEventListener("click", function () {
 let businessHeadings = document.querySelectorAll(".business-heading-keyword");
 let businessIndex = 0;
 
+// WORKABLE HACK FOR 0 INDEX
+
+setTimeout(() => {
+  businessHeadings[0].classList.add("slide");
+}, [2650]);
+
 setInterval(() => {
-  businessHeadings[businessIndex].classList.add("slide");
+  businessHeadings[0].classList.remove("slide");
+  if (businessIndex < businessHeadings.length - 1) {
+    setTimeout(() => {
+      businessHeadings[businessIndex].classList.add("slide");
+    }, [2650]);
+    businessHeadings[businessIndex].classList.remove("slide");
+    businessHeadings[businessIndex].classList.remove("show");
+    businessIndex++;
+    businessHeadings[businessIndex].classList.add("show");
+  } else {
+    setTimeout(() => {
+      businessHeadings[businessIndex].classList.add("slide");
+    }, [2650]);
+    businessHeadings[businessIndex].classList.remove("slide");
+    businessHeadings[businessIndex].classList.remove("show");
+    businessIndex = 0;
+    businessHeadings[businessIndex].classList.add("show");
+  }
 }, [3000]);
