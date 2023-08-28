@@ -203,3 +203,45 @@ setInterval(() => {
     businessHeadings[businessIndex].classList.add("show");
   }
 }, [3000]);
+
+// BRANDS CAROUSEL
+let brandsIndex = 0;
+
+let brandRight = document.getElementById("brand-right-btn");
+let brandLeft = document.getElementById("brand-left-btn");
+let brandsCarouselContainer = document.getElementById("brands-carousel-items");
+let brandsItems = document.querySelectorAll(".brands-carousel-item");
+
+brandRight.addEventListener("click", () => {
+  brandsIndex++;
+  brandLeft.disabled = false;
+
+  if (brandsIndex < brandsItems.length - 1) {
+    brandsCarouselContainer.style = `transform: translateX(${
+      brandsIndex * -100
+    }%)`;
+  } else {
+    brandRight.disabled = true;
+
+    brandsCarouselContainer.style = `transform: translateX(${
+      brandsIndex * -100
+    }%)`;
+  }
+  console.log(brandsIndex);
+});
+
+brandLeft.addEventListener("click", function () {
+  brandsIndex--;
+  brandRight.disabled = false;
+
+  if (brandsIndex <= 0) {
+    brandsCarouselContainer.style = `transform: translateX(${
+      brandsIndex * -100
+    }%)`;
+    brandsIndex = 0;
+    brandLeft.disabled = true;
+  }
+  brandsCarouselContainer.style = `transform: translateX(${
+    brandsIndex * -100
+  }%)`;
+});
