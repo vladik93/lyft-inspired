@@ -245,3 +245,12 @@ brandLeft.addEventListener("click", function () {
     brandsIndex * -100
   }%)`;
 });
+
+// COLLAPSIBLE NAV
+const collapsibleBtns = document.querySelectorAll(".btn--collapsible");
+
+collapsibleBtns.forEach((item, index) => {
+  item.addEventListener("click", function () {
+    item.nextElementSibling.classList.toggle("open");
+  });
+});
