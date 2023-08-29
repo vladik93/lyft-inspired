@@ -632,6 +632,10 @@ body {
   gap: 3.2rem;
 }
 
+.brands-btn:focus {
+  background: #d7dddd;
+}
+
 .brands-btn:disabled {
   opacity: 0;
 }
