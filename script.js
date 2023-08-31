@@ -79,39 +79,30 @@ let carouselRight = document.getElementById("ride-carousel-right");
 let carouselLeft = document.getElementById("ride-carousel-left");
 
 let currentIndex = 0;
+let currentPosition = 0;
 
 let moveBy = 0;
 let gap = 0;
 let padding = 0;
 
 carouselRight.addEventListener("click", function () {
-  currentIndex++;
-  carouselLeft.disabled = false;
+  let item = rideCarouselItems[currentIndex];
+  let itemRect = item.getBoundingClientRect();
+  let width = itemRect.width;
 
-  if (currentIndex < rideCarouselItems.length - 1) {
-    moveBy += 75;
-    gap += 0.8;
-    padding = 3.2;
+  currentPosition += width;
 
-    rideCarouselContainer.style = `transform: 
-    translateX(-${moveBy}%) 
-    translateX(-${gap}rem)
-    translateX(${padding}rem)`;
+  // padding += 3.2;
+
+  console.log(currentPosition);
+
+  if (currentIndex === 0) {
+    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem)`;
   } else {
-    moveBy += 50;
-    gap += 0.8;
-    padding = 0;
-    rideCarouselContainer.style = `transform: 
-    translateX(-${moveBy}%) 
-    translateX(-${gap}rem)
-    translateX(-${padding}rem)`;
-    carouselRight.classList.add("btn-complete");
-    carouselRight.disabled = true;
+    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem)`;
   }
-  console.log("RIGHT: " + moveBy + ", INDEX: " + currentIndex);
-  console.log(
-    "SIDE: RIGHT; " + "GAP: " + gap + "; " + "PADDING: " + padding + ";"
-  );
+
+  currentIndex++;
 });
 
 carouselLeft.addEventListener("click", function () {
