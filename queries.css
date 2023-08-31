@@ -1,0 +1,7 @@
+/* MIN-WIDTH 383px */
+
+@media (min-width: 383px) {
+  .section-cta .btn-container {
+    flex-direction: row;
+  }
+}

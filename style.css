@@ -76,7 +76,7 @@ body {
   font-weight: 700;
   border: none;
   padding: 1.6rem 3.2rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .btn--sm {
@@ -376,7 +376,7 @@ body {
 }
 
 .img-ride {
-  width: 70%;
+  width: 65%;
 }
 
 .ride-list-container {
