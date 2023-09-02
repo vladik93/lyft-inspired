@@ -84,7 +84,8 @@ let currentPosition = 0;
 let moveBy = 0;
 let gap = 0;
 let padding = 0;
-
+let offset = 0;
+let lastOffset = 0;
 carouselRight.addEventListener("click", function () {
   let item = rideCarouselItems[currentIndex];
   let itemRect = item.getBoundingClientRect();
@@ -92,14 +93,18 @@ carouselRight.addEventListener("click", function () {
 
   currentPosition += width;
 
-  // padding += 3.2;
+  gap += 0.8;
+  offset = 1.6;
+  lastOffset = 9.6;
 
   console.log(currentPosition);
 
   if (currentIndex === 0) {
-    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem)`;
+    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem) translateX(-${gap}rem) translateX(${offset}rem)`;
+  } else if (currentIndex === rideCarouselItems.length - 2) {
+    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px)`;
   } else {
-    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem)`;
+    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem) translateX(-${gap}rem) translateX(${offset}rem)`;
   }
 
   currentIndex++;

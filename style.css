@@ -477,7 +477,7 @@ body {
 .ride-carousel-container {
   padding-top: 6.4rem;
   display: flex;
-  /* gap: 0.8rem; */
+  gap: 0.8rem;
   transform: translateX(0%);
   transition: 0.3s all ease-in;
 }
