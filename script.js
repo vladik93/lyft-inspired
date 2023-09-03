@@ -4,14 +4,14 @@ function openSideNav() {
   let sideNav = document.querySelector(".header-side-nav");
 
   sideNav.classList.add("open");
-  document.body.style = "overflow: hidden";
+  document.body.style = "overflowY: hidden";
 }
 
 function closeSideNav() {
   let sideNav = document.querySelector(".header-side-nav");
 
   sideNav.classList.remove("open");
-  document.body.style = "overflow: scroll";
+  document.body.style = "overflowY: scroll";
 }
 
 // Testimonial Slides
@@ -101,10 +101,10 @@ carouselRight.addEventListener("click", function () {
 
   if (currentIndex === 0) {
     rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem) translateX(-${gap}rem) translateX(${offset}rem)`;
+  } else if (currentIndex < rideCarouselItems.length - 2) {
+    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem) translateX(-${gap}rem) translateX(${offset}rem)`;
   } else if (currentIndex === rideCarouselItems.length - 2) {
     rideCarouselContainer.style = `transform: translateX(-${currentPosition}px)`;
-  } else {
-    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem) translateX(-${gap}rem) translateX(${offset}rem)`;
   }
 
   currentIndex++;
