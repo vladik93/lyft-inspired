@@ -81,12 +81,6 @@ let carouselLeft = document.getElementById("ride-carousel-left");
 let currentIndex = 0;
 let currentPosition = 0;
 
-let bodyRect = document.body.getBoundingClientRect();
-let bodyWidth = bodyRect.width;
-
-let outerContainer = document.getElementById("ride-outer-carousel-container");
-outerContainer.getBoundingClientRect();
-
 let moveBy = 0;
 let gap = 0;
 let padding = 0;
@@ -100,8 +94,8 @@ carouselRight.addEventListener("click", function () {
 
   currentPosition += itemWidth;
 
-  if (currentPosition >= bodyWidth) {
-    rideCarouselContainer.style = `transform: translateX(${bodyWidth}px)`;
+  if (currentPosition > 0) {
+    rideCarouselContainer.style = `transform: translateX(${currentPosition}px)`;
   }
 
   rideCarouselContainer.style = `transform: translateX(-${currentPosition}px)`;
