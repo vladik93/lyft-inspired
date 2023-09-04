@@ -94,11 +94,8 @@ carouselRight.addEventListener("click", function () {
 
   currentPosition += itemWidth;
 
-  if (currentPosition > 0) {
-    rideCarouselContainer.style = `transform: translateX(${currentPosition}px)`;
-  }
-
   rideCarouselContainer.style = `transform: translateX(-${currentPosition}px)`;
+  currentIndex++;
 });
 
 carouselLeft.addEventListener("click", function () {
