@@ -429,6 +429,10 @@ body {
   width: 100%;
 }
 
+.ride-outer-carousel-container {
+  padding: 0 3.2rem;
+}
+
 .carousel-btn-container {
   display: flex;
   justify-content: center;
@@ -480,7 +484,7 @@ body {
   gap: 0.8rem;
   transform: translateX(0%);
   transition: 0.3s all ease-in;
-  max-width: 100%;
+  width: 100%;
 }
 
 .ride-carousel-item {

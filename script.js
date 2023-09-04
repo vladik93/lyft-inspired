@@ -81,33 +81,30 @@ let carouselLeft = document.getElementById("ride-carousel-left");
 let currentIndex = 0;
 let currentPosition = 0;
 
+let bodyRect = document.body.getBoundingClientRect();
+let bodyWidth = bodyRect.width;
+
+let outerContainer = document.getElementById("ride-outer-carousel-container");
+outerContainer.getBoundingClientRect();
+
 let moveBy = 0;
 let gap = 0;
 let padding = 0;
 let offset = 0;
 let lastOffset = 0;
+
 carouselRight.addEventListener("click", function () {
   let item = rideCarouselItems[currentIndex];
   let itemRect = item.getBoundingClientRect();
-  let width = itemRect.width;
+  let itemWidth = itemRect.width;
 
-  currentPosition += width;
+  currentPosition += itemWidth;
 
-  gap += 0.8;
-  offset = 1.6;
-  lastOffset = 9.6;
-
-  console.log(currentPosition);
-
-  if (currentIndex === 0) {
-    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem) translateX(-${gap}rem) translateX(${offset}rem)`;
-  } else if (currentIndex < rideCarouselItems.length - 2) {
-    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-1.6rem) translateX(-${gap}rem) translateX(${offset}rem)`;
-  } else if (currentIndex === rideCarouselItems.length - 2) {
-    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px)`;
+  if (currentPosition >= bodyWidth) {
+    rideCarouselContainer.style = `transform: translateX(${bodyWidth}px)`;
   }
 
-  currentIndex++;
+  rideCarouselContainer.style = `transform: translateX(-${currentPosition}px)`;
 });
 
 carouselLeft.addEventListener("click", function () {
