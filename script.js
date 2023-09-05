@@ -85,22 +85,25 @@ let gap = 0;
 let padding = 0;
 
 carouselRight.addEventListener("click", function () {
-  currentIndex++;
   carouselLeft.disabled = false;
 
+  let carouselItem = rideCarouselItems[currentIndex];
+  let carouselItemRect = carouselItem.getBoundingClientRect();
+  let carouselItemWidth = carouselItemRect.width;
+
   if (currentIndex < rideCarouselItems.length - 1) {
-    moveBy += 75;
-    gap += 0.8;
-    padding = 3.2;
+    moveBy += carouselItemWidth;
+    // gap += 0.8;
+    // padding = 3.2;
 
     rideCarouselContainer.style = `transform: 
-    translateX(-${moveBy}%) 
+    translateX(-${moveBy}px) 
     translateX(-${gap}rem)
     translateX(${padding}rem)`;
   } else {
-    moveBy += 50;
-    gap += 0.8;
-    padding = 0;
+    moveBy += carouselItemWidth;
+    // gap += 0.8;
+    // padding = 0;
     rideCarouselContainer.style = `transform: 
     translateX(-${moveBy}%) 
     translateX(-${gap}rem)
@@ -108,6 +111,8 @@ carouselRight.addEventListener("click", function () {
     carouselRight.classList.add("btn-complete");
     carouselRight.disabled = true;
   }
+
+  currentIndex++;
   console.log("RIGHT: " + moveBy + ", INDEX: " + currentIndex);
   console.log(
     "SIDE: RIGHT; " + "GAP: " + gap + "; " + "PADDING: " + padding + ";"
