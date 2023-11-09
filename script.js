@@ -79,10 +79,12 @@ let carouselRight = document.getElementById("ride-carousel-right");
 let carouselLeft = document.getElementById("ride-carousel-left");
 
 let currentIndex = 0;
+let currentPosition = 0;
 
 let moveBy = 0;
 let gap = 0;
 let padding = 0;
+let offset = 0;
 
 carouselRight.addEventListener("click", function () {
   carouselLeft.disabled = false;
@@ -91,63 +93,29 @@ carouselRight.addEventListener("click", function () {
   let carouselItemRect = carouselItem.getBoundingClientRect();
   let carouselItemWidth = carouselItemRect.width;
 
-  if (currentIndex < rideCarouselItems.length - 1) {
-    moveBy += carouselItemWidth;
-    // gap += 0.8;
-    // padding = 3.2;
+  if (currentIndex === 0) {
+    offset = 2.4;
 
-    rideCarouselContainer.style = `transform: 
-    translateX(-${moveBy}px) 
-    translateX(-${gap}rem)
-    translateX(${padding}rem)`;
+    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-${offset}rem)`;
   } else {
-    moveBy += carouselItemWidth;
-    // gap += 0.8;
-    // padding = 0;
-    rideCarouselContainer.style = `transform: 
-    translateX(-${moveBy}%) 
-    translateX(-${gap}rem)
-    translateX(-${padding}rem)`;
-    carouselRight.classList.add("btn-complete");
-    carouselRight.disabled = true;
+    offset = 2.4;
+    rideCarouselContainer.style = `transform: translateX(-${currentPosition}px) translateX(-${offset}rem)`;
   }
 
+  currentPosition += carouselItemWidth;
   currentIndex++;
-  console.log("RIGHT: " + moveBy + ", INDEX: " + currentIndex);
-  console.log(
-    "SIDE: RIGHT; " + "GAP: " + gap + "; " + "PADDING: " + padding + ";"
-  );
 });
 
 carouselLeft.addEventListener("click", function () {
   currentIndex--;
-  carouselRight.classList.remove("btn-complete");
-  carouselRight.disabled = false;
 
-  if (currentIndex == 0) {
-    carouselLeft.disabled = true;
-    moveBy -= 75;
-    gap -= 0.8;
-    padding = 0;
-  } else if (currentIndex == rideCarouselItems.length - 2) {
-    moveBy -= 50;
-    gap -= 0.8;
-    padding = 3.2;
-  } else {
-    moveBy -= 75;
-    gap -= 0.8;
-    padding = 3.2;
-  }
+  let carouselItem = rideCarouselItems[currentIndex];
+  let carouselItemRect = carouselItem.getBoundingClientRect();
+  let carouselItemWidth = carouselItemRect.width;
 
-  rideCarouselContainer.style = `transform:
-  translateX(-${moveBy}%)
-  translateX(-${gap}rem)
-  translateX(${padding}rem)`;
+  currentPosition -= carouselItemWidth;
 
-  console.log("LEFT: " + moveBy + ", INDEX: " + currentIndex);
-  console.log(
-    "SIDE: LEFT; " + "GAP: " + gap + "; " + "PADDING: " + padding + ";"
-  );
+  rideCarouselContainer.style = `transform: translateX(-${currentPosition}px)`;
 });
 
 // KEYWORDS TRANSITIONS

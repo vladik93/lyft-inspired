@@ -1,0 +1,66 @@
+carouselRight.addEventListener("click", function () {
+  carouselLeft.disabled = false;
+
+  let carouselItem = rideCarouselItems[currentIndex];
+  let carouselItemRect = carouselItem.getBoundingClientRect();
+  let carouselItemWidth = carouselItemRect.width;
+
+  if (currentIndex < rideCarouselItems.length - 1) {
+    moveBy += carouselItemWidth;
+    // gap += 0.8;
+    // padding = 3.2;
+
+    rideCarouselContainer.style = `transform: 
+    translateX(-${moveBy}px) 
+    translateX(-${gap}rem)
+    translateX(${padding}rem)`;
+  } else {
+    moveBy += carouselItemWidth;
+    // gap += 0.8;
+    // padding = 0;
+    rideCarouselContainer.style = `transform: 
+    translateX(-${moveBy}%) 
+    translateX(-${gap}rem)
+    translateX(-${padding}rem)`;
+    carouselRight.classList.add("btn-complete");
+    carouselRight.disabled = true;
+  }
+
+  currentIndex++;
+  console.log("RIGHT: " + moveBy + ", INDEX: " + currentIndex);
+  console.log(
+    "SIDE: RIGHT; " + "GAP: " + gap + "; " + "PADDING: " + padding + ";"
+  );
+});
+
+
+carouselLeft.addEventListener("click", function () {
+  currentIndex--;
+  carouselRight.classList.remove("btn-complete");
+  carouselRight.disabled = false;
+
+  if (currentIndex == 0) {
+    carouselLeft.disabled = true;
+    moveBy -= 75;
+    gap -= 0.8;
+    padding = 0;
+  } else if (currentIndex == rideCarouselItems.length - 2) {
+    moveBy -= 50;
+    gap -= 0.8;
+    padding = 3.2;
+  } else {
+    moveBy -= 75;
+    gap -= 0.8;
+    padding = 3.2;
+  }
+
+  rideCarouselContainer.style = `transform:
+  translateX(-${moveBy}%)
+  translateX(-${gap}rem)
+  translateX(${padding}rem)`;
+
+  console.log("LEFT: " + moveBy + ", INDEX: " + currentIndex);
+  console.log(
+    "SIDE: LEFT; " + "GAP: " + gap + "; " + "PADDING: " + padding + ";"
+  );
+});
